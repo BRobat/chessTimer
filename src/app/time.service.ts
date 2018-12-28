@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class TimeService {
 
-  poTime = 5;
-  ptTime = 5;
+  poTime = 60;
+  ptTime = 60;
 
   constructor() { }
 

@@ -2,33 +2,31 @@
   <ion-toolbar>
     <ion-button fill="clear" class="" (click)="getTimers()"> reset </ion-button>
     <ion-title>timer</ion-title>
-    <ion-button fill="clear" routerLink="/settings"> settings </ion-button>
+    <ion-button fill="clear" (click)="stop()" routerLink="/settings"> settings </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <div class="lbl">
-    {{poTime}} / {{ptTime}}
-  </div>
-  <div class="container" *ngIf="poActive; else elseBlock">
-    <button class="btn-lrg active" (click)="switchPlayers()">
 
+  <div class="container" *ngIf="poActive">
+    <div class="lbl">
+      {{poTime}} / {{ptTime}}
+    </div>
+    <button class="btn-lrg active" (click)="switchPlayers()">
     </button>
     <button class="btn-lrg idle">
-
     </button>
   </div>
-  <ng-template #elseBlock>
-
-    <div class="container">
-      <button class="btn-lrg idle">
-
-      </button>
-      <button class="btn-lrg active" (click)="switchPlayers()">
-
-      </button>
+  <div class="container" *ngIf="ptActive">
+    <div class="lbl">
+      {{poTime}} / {{ptTime}}
     </div>
-
-  </ng-template>
-
+    <button class="btn-lrg idle">
+    </button>
+    <button class="btn-lrg active" (click)="switchPlayers()">
+    </button>
+  </div>
+  <div class="container" *ngIf="poActive == ptActive">
+    <ion-button (click)="start()"> start as player 1</ion-button>
+  </div>
 </ion-content>

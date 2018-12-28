@@ -1,5 +1,5 @@
 import { Timer } from './../model/timer';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { TimeService } from '../time.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { TimeService } from '../time.service';
   templateUrl: './timer.page.html',
   styleUrls: ['./timer.page.scss'],
 })
-export class TimerPage implements OnInit {
+export class TimerPage {
 
   // boring way
   poActive: Boolean;
@@ -20,15 +20,12 @@ export class TimerPage implements OnInit {
 
 
   constructor(private timeService: TimeService) {
-    this.poActive = true;
-    this.ptActive = true;
+    this.stop();
 
     this.getTimers();
-   }
-
-  ngOnInit() {
+    this.startTimer();
     
-  }
+   }
 
   switchPlayers() {
     this.poActive = !this.poActive;
@@ -41,11 +38,22 @@ export class TimerPage implements OnInit {
   }
 
   startTimer() {
-
+    setInterval(() => {
+      if(this.poActive) {
+        this.poTime--
+      } else if(this.ptActive) {
+        this.ptTime--
+      }
+    }, 1000)
   }
 
-  stopTimer() {
+  start() {
+    this.poActive = true;
+  }
 
+  stop() {
+    this.poActive = false;
+    this.ptActive = false;
   }
 
 }
