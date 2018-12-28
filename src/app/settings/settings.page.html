@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button fill="clear" routerLink="/timer">
+      < back</ion-button> <ion-title>settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="center">
+    <label> set timer for each of players</label>
+  </div>
+  <div class="container">
+    <label>player 1</label>
+    <input type="number" value="5" (keyup)="poSetTime($event)">
+    <label>player 2</label>
+    <input type="number" value="5" (keyup)="ptSetTime($event)">
+  </div>
+</ion-content>

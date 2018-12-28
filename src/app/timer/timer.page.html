@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button fill="clear" class=""> reset </ion-button>
+    <ion-title>timer</ion-title>
+    <ion-button fill="clear" routerLink="/settings"> settings </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="container" *ngIf="poActive; else elseBlock">
+    <button class="btn-lrg active" (click)="switchPlayers()">
+
+    </button>
+    <button class="btn-lrg idle">
+
+    </button>
+  </div>
+  <ng-template #elseBlock>
+
+    <div class="container">
+      <button class="btn-lrg idle">
+
+      </button>
+      <button class="btn-lrg active" (click)="switchPlayers()">
+
+      </button>
+    </div>
+
+  </ng-template>
+
+</ion-content>

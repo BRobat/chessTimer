@@ -1,5 +1,8 @@
 {
   "name": "chessTimer",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+}
+
+.btn-lrg {
+    margin: 20px 20px 20px 20px;
+    min-width: 40vw;
+}
+
+.active {
+    background-color: rgb(255, 223, 81)
+}
+
+.idle {
+    background-color: rgb(167, 153, 91)
+}
