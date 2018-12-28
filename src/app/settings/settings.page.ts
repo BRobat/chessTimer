@@ -12,7 +12,8 @@ export class SettingsPage implements OnInit {
   ptTime: number;
 
   constructor(private timeService: TimeService) { 
-
+    this.poTime = timeService.poGetTime();
+    this.ptTime = timeService.ptGetTime();
   }
 
   ngOnInit() {

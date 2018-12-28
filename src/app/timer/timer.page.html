@@ -7,20 +7,16 @@
 </ion-header>
 
 <ion-content padding>
-
+  <div class="lbl">
+    {{poTime}} / {{ptTime}}
+  </div>
   <div class="container" *ngIf="poActive">
-    <div class="lbl">
-      {{poTime}} / {{ptTime}}
-    </div>
     <button class="btn-lrg active" (click)="switchPlayers()">
     </button>
     <button class="btn-lrg idle">
     </button>
   </div>
   <div class="container" *ngIf="ptActive">
-    <div class="lbl">
-      {{poTime}} / {{ptTime}}
-    </div>
     <button class="btn-lrg idle">
     </button>
     <button class="btn-lrg active" (click)="switchPlayers()">

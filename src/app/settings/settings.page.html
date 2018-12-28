@@ -11,8 +11,8 @@
   </div>
   <div class="container">
     <label>player 1</label>
-    <input type="number" (keyup)="poSetTime($event)">
+    <input type="number" value="{{poTime}}" (keyup)="poSetTime($event)">
     <label>player 2</label>
-    <input type="number" (keyup)="ptSetTime($event)">
+    <input type="number" value="{{ptTime}}" (keyup)="ptSetTime($event)">
   </div>
 </ion-content>
