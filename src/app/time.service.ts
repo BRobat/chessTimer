@@ -5,17 +5,22 @@ import { Injectable } from '@angular/core';
 })
 export class TimeService {
 
-  poTime: number;
-  ptTime: number;
+  poTime = 5;
+  ptTime = 5;
 
   constructor() { }
 
   setTime(poTime: number, ptTime: number) {
     this.poTime = poTime;
     this.ptTime = ptTime;
+    console.log(this.poTime);
   }
 
-  getTime() {
-    return this.poTime, this.ptTime;
+  poGetTime() {
+    return this.poTime;
+  }
+
+  ptGetTime() {
+    return this.ptTime;
   }
 }

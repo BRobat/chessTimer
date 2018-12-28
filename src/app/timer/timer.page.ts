@@ -12,8 +12,8 @@ export class TimerPage implements OnInit {
   // boring way
   poActive: Boolean;
   ptActive: Boolean;
-  poTime = 5;
-  ptTime = 5;
+  poTime: number;
+  ptTime: number;
 
   poTimer: Timer;
   ptTimer: Timer;
@@ -23,17 +23,21 @@ export class TimerPage implements OnInit {
     this.poActive = true;
     this.ptActive = true;
 
-    this.poTime = timeService.getTime();
-
-    
+    this.getTimers();
    }
 
   ngOnInit() {
+    
   }
 
   switchPlayers() {
     this.poActive = !this.poActive;
     this.ptActive = !this.ptActive;
+  }
+
+  getTimers() {
+    this.poTime = this.timeService.poGetTime();
+    this.ptTime = this.timeService.ptGetTime();
   }
 
   startTimer() {

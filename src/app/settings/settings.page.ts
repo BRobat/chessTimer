@@ -8,6 +8,9 @@ import { TimeService } from '../time.service';
 })
 export class SettingsPage implements OnInit {
 
+  poTime: number;
+  ptTime: number;
+
   constructor(private timeService: TimeService) { 
 
   }
@@ -16,11 +19,18 @@ export class SettingsPage implements OnInit {
   }
 
   poSetTime(event: any) {
-    
+    this.poTime = event.target.value;
+    this.setTime(this.poTime, this.ptTime);
   }
 
   ptSetTime(event: any) {
+    this.ptTime = event.target.value;
+    this.setTime(this.poTime, this.ptTime);
 
+  }
+
+  setTime(poTime: number, ptTime: number) {
+    this.timeService.setTime(poTime, ptTime);
   }
 
 }
