@@ -1,4 +1,4 @@
-import { Timer } from './../model/timer';
+
 import { Component } from '@angular/core';
 import { TimeService } from '../time.service';
 
@@ -14,9 +14,6 @@ export class TimerPage {
   ptActive: Boolean;
   poTime: number;
   ptTime: number;
-
-  poTimer: Timer;
-  ptTimer: Timer;
 
 
   constructor(private timeService: TimeService) {
@@ -39,11 +36,17 @@ export class TimerPage {
 
   startTimer() {
     setInterval(() => {
-      if(this.poActive) {
+      if(this.poTime >= 1) {
+        if(this.poActive) {
         this.poTime--
       } else if(this.ptActive) {
         this.ptTime--
+      } else {
+        this.stop()
+        this.getTimers()
       }
+      }
+      
     }, 1000)
   }
 
